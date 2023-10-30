@@ -30,11 +30,13 @@ nav {
 
 .elementswrapper .elements .about {
     text-decoration: none;
+    color:black;
 
 }
 
 .elementswrapper .elements .shop {
     text-decoration: none;
+    color:black;
 }
 
 .elementswrapper .elements .shop:visited {
