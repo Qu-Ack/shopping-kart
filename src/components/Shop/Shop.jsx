@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import styles from './Shop.module.css'
 
 function Shop() {
 
@@ -29,8 +30,11 @@ function Shop() {
 
     const items = data.map(element => {
         return(
-            <div className="card" key={element.id}>
-                {element.name}
+            <div className={styles.card} key={element.id}>
+                <img src={element.img} alt={element.name} />
+                <p className={styles.title}>{element.name}</p>
+                <p className={styles.description}>{element.description}</p>
+                
             </div>
         )
     })
@@ -40,7 +44,7 @@ function Shop() {
     if (error) return <h1>We have encountered an error</h1>
 
     return(
-        <div>
+        <div className={styles.cardwrapper}>
             {items}
         </div>
         )

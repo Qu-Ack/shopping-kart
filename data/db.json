@@ -30,6 +30,12 @@
             "name":"Sunsilk",
             "description":"Don't know much about this shampoo, don't use it.",
             "img":"https://m.media-amazon.com/images/I/51L2bK3-zwL.jpg"
+        },
+        {
+            "id":5,
+            "name":"Loreal",
+            "description":"Aishwariya Rao is the brand ambassador, Very feminine branding, not a fan.",
+            "img":"https://m.media-amazon.com/images/I/418hR2zKs1L.jpg"
         }
     ]
 }

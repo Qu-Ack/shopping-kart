@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap');
   
   :root {
     --mainfont:'Roboto', sans-serif;
+    --productfont: 'Edu TAS Beginner', sans-serif;
   }
