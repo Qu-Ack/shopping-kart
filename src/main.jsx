@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import { createBrowserRouter , RouterProvider } from 'react-router-dom'
@@ -7,6 +7,8 @@ import Errorpage from './components/Error/Errorpage.jsx'
 import Home from './components/Home/Home.jsx'
 import './index.css'
 import About from './components/About/About.jsx'
+import Cart from './components/Cart/Cart.jsx'
+
 
 
 const router = createBrowserRouter([
@@ -21,11 +23,15 @@ const router = createBrowserRouter([
       },
       {
         path:"/shop",
-        element: <Shop />
+        element: <Shop/>
       } , 
       {
         path:"/about",
         element: <About />
+      },
+      {
+        path:"/cart",
+        element: <Cart />
       }
     ]
   }

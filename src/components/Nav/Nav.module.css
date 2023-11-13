@@ -47,3 +47,16 @@ nav {
 .elementswrapper .elements .about:visited {
     color:black;
 }
+
+.elementswrapper .elements .cart svg {
+    min-width: 27px;
+    min-height: 10px;
+    transition: all 0.5s;
+}
+
+.elementswrapper .elements .cart svg:hover {
+    rotate: 180deg;
+}
+
+
+

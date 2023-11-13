@@ -1,0 +1,25 @@
+.cartwrapper {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.itemwrapper {
+    display:flex;
+    justify-content: space-between;
+    height: auto;
+    gap:12px;
+}
+
+.itemwrapper img {
+    width: 100px;
+    height: 100px;
+
+}
+
+.itemwrapper .info
+{
+    width: 400px;
+}
+

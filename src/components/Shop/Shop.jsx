@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import styles from './Shop.module.css'
+import { useOutletContext } from "react-router-dom";
 
 function Shop() {
 
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+    const {handleClick , cartItems} = useOutletContext();
 
     useEffect(() => {
         async function getData() {
@@ -28,18 +30,23 @@ function Shop() {
         getData();
     } , []);
 
+    // console.log(cartItems)
+
     const items = data.map(element => {
         return(
             <div className={styles.card} key={element.id}>
                 <img src={element.img} alt={element.name} />
                 <p className={styles.title}>{element.name}</p>
                 <p className={styles.description}>{element.description}</p>
+                <button className={styles.cart} onClick={() => 
+                {handleClick(element)
+                }}>Add To Cart</button>
                 
             </div>
         )
     })
-    // console.log(items)
 
+   
     if (loading) return <h1>Loading ...</h1>
     if (error) return <h1>We have encountered an error</h1>
 

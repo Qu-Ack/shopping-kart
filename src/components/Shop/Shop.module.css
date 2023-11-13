@@ -32,8 +32,24 @@
 
 .card .description {
     width:250px;
+    height: 80px;
     text-align: center;
     font-size: 1.1rem;
     font-weight: lighter;
     font-family: var(--mainfont);
+}
+
+.cart 
+{
+    padding:12px;
+    width:200px;
+    background-color: white;
+    font-family: var(--productfont);
+    font-size: 1.1rem;
+}
+
+.cart:hover {
+    background-color: black;
+    color:white;
+    cursor:pointer;
 }
