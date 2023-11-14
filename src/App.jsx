@@ -5,9 +5,14 @@ import { useState } from 'react'
 
 function App() {
   const [cartItems , setCartItems] = useState([]);
+  const [isAdded , setIsAdded] = useState(false);
+
+  // const carts = document.getElementsByTagName('svg');
   function handleClick(element)
   {
     setCartItems([...cartItems , element]);
+    setIsAdded(true);
+
   }
 
  
@@ -17,7 +22,7 @@ function App() {
     <div className="wrapper">
       <Nav/>
       <div className="details">
-        <Outlet context={{cartItems , setCartItems, handleClick}}/>
+        <Outlet context={{cartItems , setCartItems, handleClick , isAdded}}/>
       </div>
     </div>
   )

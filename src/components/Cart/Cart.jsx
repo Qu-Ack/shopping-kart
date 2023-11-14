@@ -4,6 +4,7 @@ import { useOutletContext } from "react-router-dom";
 
 function Cart()
 {
+
     const {cartItems} = useOutletContext();
     console.log(cartItems)
     return(
@@ -15,6 +16,12 @@ function Cart()
                  <div className={styles.info}>
                     <h1>{item.name}</h1>
                     <p>{item.description}</p> 
+                    <div className={styles.quantity}>
+                    <button className={styles.plus}>-</button>
+                    <input className={styles.input}></input>
+                    <button className={styles.minus}>+</button>
+                    </div>
+                    <p>{item.price}</p>
                  </div>
                 </div>
                 )

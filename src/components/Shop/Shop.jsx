@@ -30,29 +30,29 @@ function Shop() {
         getData();
     } , []);
 
-    // console.log(cartItems)
 
-    const items = data.map(element => {
+
+   
+    if (loading) return <h1>Loading ...</h1>
+    if (error) return <h1>We have encountered an error</h1>
+
+
+    return(
+        <div className={styles.cardwrapper}>
+            {data.map(element => {
         return(
             <div className={styles.card} key={element.id}>
                 <img src={element.img} alt={element.name} />
                 <p className={styles.title}>{element.name}</p>
                 <p className={styles.description}>{element.description}</p>
+                <p className={styles.price}>{element.price}</p>
                 <button className={styles.cart} onClick={() => 
                 {handleClick(element)
                 }}>Add To Cart</button>
                 
             </div>
         )
-    })
-
-   
-    if (loading) return <h1>Loading ...</h1>
-    if (error) return <h1>We have encountered an error</h1>
-
-    return(
-        <div className={styles.cardwrapper}>
-            {items}
+    })}
         </div>
         )
 }
