@@ -1,11 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Cart.module.css"
 import { useOutletContext } from "react-router-dom";
 
 function Cart()
 {
 
-    const {cartItems} = useOutletContext();
+    const {cartItems, addItems, addItemsUsingInput} = useOutletContext();
+    const [val , setVal] = useState(0);
     console.log(cartItems)
     return(
         <div className={styles.cartwrapper}>
@@ -15,11 +16,18 @@ function Cart()
                  <img src={item.img} alt={item.name}></img> 
                  <div className={styles.info}>
                     <h1>{item.name}</h1>
+                    <h1>{item.quantity}</h1>
                     <p>{item.description}</p> 
                     <div className={styles.quantity}>
-                    <button className={styles.plus}>-</button>
-                    <input className={styles.input}></input>
-                    <button className={styles.minus}>+</button>
+                    <button className={styles.plus} onClick={() => {
+                        addItems(-1, item.id);
+                    }}>-</button>
+                    <input type="number"  className={styles.input} onChange={(e) => {
+                        addItemsUsingInput(parseInt(e.target.value), item.id);
+                    }}></input>
+                    <button className={styles.minus} onClick={() => {
+                        addItems(1 , item.id);
+                    }}>+</button>
                     </div>
                     <p>{item.price}</p>
                  </div>
